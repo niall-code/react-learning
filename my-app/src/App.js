@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import FunctionalGreeting from './components/FunctionalGreeting';
+import FunctionalGreetingWithProps from './components/FunctionalGreetingWithProps';
 
 function App() {
   return (
     <div className="App">
-      <FunctionalGreeting />
+      <FunctionalGreetingWithProps greeting="It's nice to meet you." name="John" age="30" />
     </div>
   );
 }
