@@ -1,10 +1,10 @@
 import './App.css';
-import StatefulGreetingWithCallback from './components/StatefulGreetingWithCallback';
+import StatefulGreetingWithPrevState from './components/StatefulGreetingWithPrevState';
 
 function App() {
   return (
     <div className="App">
-      <StatefulGreetingWithCallback />
+      <StatefulGreetingWithPrevState />
     </div>
   );
 }
