@@ -14,6 +14,11 @@ function UseEffectCounter() {
         const interval = setInterval(() => {
             setTime(time => time + 1)
         }, 1000);
+        // Remove interval when parent toggles it off
+        return () => {
+            console.log('cleaning up!');
+            clearInterval(interval);
+        }
         // Empty array to not repeat or crash (timer begins only once)
     }, []);
 
