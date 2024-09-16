@@ -12,14 +12,17 @@ export class HTTPRequests extends Component {
   }
 
   componentDidMount() {
+    // Can add /number to end of GET url
     axios.get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         console.log(response);
         this.setState({
+          // If only one post, array-ify it
           posts: Array.isArray(response.data)
             ? response.data
             : [response.data]
         })
+        // Catch errors, such as non-existent post
       }).catch(error => {
         this.setState({
           error: error.message
@@ -43,6 +46,8 @@ export class HTTPRequests extends Component {
               </div>
             ))
           ) : (
+              // Two responses, for caught error or other,
+              // e.g., non-array (before code accounted for)
               this.state.error
                 ? <p>{this.state.error}</p>
                 : <h4>Loading posts ...</h4>
